@@ -1,0 +1,17 @@
+{
+  "name": "WebPortal",
+  "version": "1.0.0",
+  "description": "WebPortal",
+  "main": "webserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Konstantin Sivakov",
+  "license": "ISC",
+  "dependencies": {
+    "winston" : "latest",
+    "httpdispatcher" : "latest",
+    "request" : "latest",
+    "mime" : "latest"
+  }
+}

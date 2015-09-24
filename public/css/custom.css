@@ -1,0 +1,77 @@
+.map {
+  height: 600px;
+  width: 100%;
+}
+.olControlAttribution, .olControlZoom {
+  visibility: hidden;
+}
+#OpenLayers_Map_2_OpenLayers_ViewPort {
+  --z-index: -999;
+}
+#searchDiv {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  --margin-bottom: -230px;
+  --padding-bottom: 20px;
+  z-index: 999;
+  --padding-left: 20px;
+  --padding-top: 20px;
+  --width: 300px;
+}
+.searchInner {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px 30px 20px 20px;
+}
+#searchForm .input-lg {
+  border-radius: 0px;
+  border-style: solid;
+  border-color: #383838;
+  border-width: 1px;
+  width: 100% !important;
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+#searchForm button {
+  border-radius: 0px;
+  width: 80px;
+}
+div.olControlZoom {
+  right: 18px;
+  top: 15px;
+  position: absolute;
+  visibility: visible;
+}
+div.olControlZoom a {
+  visibility: visible;
+  display: block;
+  margin-bottom: 8px;
+  color: #FFF;
+  font-size: 25px;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  background: #0076b5;
+  filter: alpha(opacity=80);
+}
+div.olControlZoom a:hover {
+  visibility: visible;
+  background: #0087cf;
+  filter: alpha(opacity=100);
+}
+#toggleBtn {
+  border-radius: 0px;
+  border-style: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-left-style: solid;
+}
+#swapBtn {
+  border-radius: 0px;
+  border-style: none;
+  background-color: rgba(255, 255, 255, 0.0);
+}

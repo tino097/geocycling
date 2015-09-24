@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/custom.css" type="text/css">
+  <title>SmartCycling</title>
+</head>
+
+<body>
+  <div class="container" id="searchDiv">
+  <div class="row">
+    <div class="col-md-3 searchInner">
+      <div>
+        <h4>Smart Cycling Route Planner</h4>
+      </div>
+      <form id="searchForm">
+        <div class="form-group">
+          <input type="text" id="origin" name="origin" placeholder="Origin" class="input-lg" />
+        </div>
+        <div class="form-group">
+          <input type="text" id="destination" name="destination" placeholder="Destination" class="input-lg" />
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <button type="button" id="submit" class="btn btn-primary btn-lg pull-right" disabled>
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-2" style="padding:0px;">
+      <div class="toggleDiv">
+        <a href="#" id="toggleBtn" class="btn btn-sm btn-default" style="">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="swap" style="margin-top: 71px; margin-left: -32px;">
+        <a href="#" id="swapBtn" class="btn btn-sm btn-default" style="">
+          <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="openlayers-container" class="map"></div>
+
+
+  <!-- <script src="js/osmtile-module.js" type="text/javascript"></script> -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+  <script src="js/OpenLayers.js"></script>
+  <script src="js/osm-server.js" type="text/javascript"></script>
+  <script src="js/geocoding-module.js" type="text/javascript"></script>
+  <script src="js/routeplanner-module.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var host = "http://localhost:3000/smartcycling";
+    var geocodingModuleUrl = host + "/geocoding"; // + "server/module/geocoding-module";
+    var routeplannerModuleUrl = host + "/routeplanner"; // + "server/module/routeplanner-module";
+    var originObj = null;
+    var destinationObj = null;
+    $(document).ready(function() {
+      OsmServer.init();
+    });
+
+    $('#toggleBtn').on('click', function(){
+      $( ".searchInner" ).toggle( "normal", function() {
+        $("#toggleBtn .glyphicon").toggleClass("glyphicon-chevron-right");
+      });
+    });
+
+    $('#swapBtn').on('click', function(){
+      var tmp = $("#origin").val();
+      $("#origin").val($("#destination").val());
+      $('#origin').keyup();
+      $("#destination").val(tmp);
+      $('#destination').keyup();
+    });
+  </script>
+</body>
+
+</html>
